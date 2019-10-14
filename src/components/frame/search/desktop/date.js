@@ -27,7 +27,7 @@ export default function Airport({
   }, [date]);
 
   const onlyOutbound = () => {
-    dispatch({ type: 'SET_INBOUND_FLIGHT', inboundFlight: '' });
+    dispatch({ type: 'SET_INBOUND_FLIGHT', inboundDate: '' });
   };
 
   return (

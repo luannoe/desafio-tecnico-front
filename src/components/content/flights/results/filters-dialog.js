@@ -24,7 +24,7 @@ export default function FiltersDialog({
           block
           size="small"
           type="primary"
-          class="mt-5"
+          className="mt-5"
           onClick={() => {
             setDialogFilters(false);
           }}
