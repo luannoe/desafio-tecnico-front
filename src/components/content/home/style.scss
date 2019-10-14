@@ -1,0 +1,27 @@
+@import 'assets/css/variables.scss';
+
+.home-container {
+  width: 100%;
+  padding: 100px;
+
+  &__title {
+    max-width: 420px;
+    font-weight: bolder;
+    color: $primary-dark;
+    font-size: 40px;
+    line-height: 1.2;
+  }
+
+  &__subtitle {
+    font-size: 16px;
+  }
+
+  &__background {
+    z-index: 0;
+    height: 400px;
+    user-select: none;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+  }
+}

@@ -1,0 +1,152 @@
+@import './variables.scss';
+
+// Colours class
+@each $key, $val in $colors {
+  .#{$key} {
+    background-color: $val !important;
+    border-color: $val !important;
+    color: #fff !important;
+  }
+
+  .#{$key}--text {
+    color: $val !important;
+  }
+}
+
+// Margins and Paddings
+@mixin marginsAndPaddings {
+  @for $i from 0 to 6 {
+    .mt-#{$i} { margin-top: $i * $spacer; }
+    .mb-#{$i} { margin-bottom: $i * $spacer; }
+    .mr-#{$i} { margin-right: $i * $spacer; }
+    .ml-#{$i} { margin-left: $i * $spacer; }
+    .mx-#{$i} { margin-left: $i * $spacer; margin-right: $i * $spacer; }
+    .my-#{$i} { margin-top: $i * $spacer; margin-bottom: $i * $spacer; }
+    .ma-#{$i} { margin: $i * $spacer; }
+
+    .pt-#{$i} { margin-top: $i * $spacer; }
+    .pb-#{$i} { margin-bottom: $i * $spacer; }
+    .pr-#{$i} { margin-right: $i * $spacer; }
+    .pl-#{$i} { margin-left: $i * $spacer; }
+    .px-#{$i} { margin-left: $i * $spacer; margin-right: $i * $spacer; }
+    .py-#{$i} { margin-top: $i * $spacer; margin-bottom: $i * $spacer; }
+    .pa-#{$i} { margin: $i * $spacer; }
+  }
+}
+
+@include marginsAndPaddings;
+
+.bold {
+  font-weight: bold !important;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.block {
+  display: block
+}
+
+.min-height {
+  min-height: $min-height-mobile;
+
+  @media screen and (min-width: $breakpoint-sm) {
+    min-height: $min-height-desktop;
+  }
+}
+
+.desktop-only {
+  display: none;
+
+  @media screen and (min-width: $breakpoint-lg) {
+    display: flex;
+  }
+}
+
+.mobile-only {
+  display: flex;
+
+  @media screen and (min-width: $breakpoint-lg) {
+    display: none;
+  }
+}
+
+/* Reset */
+.ant-input,
+.ant-select-selection {
+  &:hover, &:focus {
+    border-color: $primary !important;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px rgba($primary, 0.2) !important;
+  }
+}
+
+.ant-select-auto-complete {
+  &.ant-select-lg {
+    .ant-input {
+      font-size: 16px !important;
+    }
+  }
+}
+
+.ant-btn-primary {
+  font-weight: 500;
+  height: 45px;
+  padding: 0 30px;
+  box-shadow: 0 3px 0 $primary-dark;
+  background: $primary;
+  border-color: $primary;
+  color: #fff;
+
+  &:hover, &:focus {
+    background: darken($primary, 5%);
+    border-color: darken($primary, 5%);
+    box-shadow: 0 3px 0 darken($primary-dark, 5%);
+  }
+  
+  &:active {
+    background: darken($primary, 5%);
+    border-color: darken($primary, 5%);
+  }
+
+  &[disabled] {
+    border: 0;
+  }
+
+  &.btn--dialog {
+    height: 32px;
+  }
+}
+
+.ant-modal-mask {
+  backdrop-filter: blur(5px) contrast(.8);
+}

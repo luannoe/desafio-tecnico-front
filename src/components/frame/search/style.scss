@@ -1,0 +1,219 @@
+@import 'assets/css/variables.scss';
+
+$input-border: #d9d9d9;
+$sub-text-color: #879395;
+$size-mobile: 50px;
+$size-desktop: 80px;
+
+.search {
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid $border-color;
+  height: $size-mobile;
+  display: flex;
+  position: fixed;
+  top: $size-mobile;
+  justify-content: center;
+  z-index: 100;
+
+  @media screen and (min-width: $breakpoint-sm) {
+    top: $size-desktop;
+    height: $size-desktop;
+  }
+
+  &__mobile {
+    cursor: pointer;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__item {
+      color: $font-color;
+      display: flex;
+      align-items: center;
+      margin: 0 7px;
+  
+      img {
+        height: 12px;
+        margin-right: 3px;
+      }
+    }
+  
+    &__divider {
+      width: 1px;
+      height: 15px;
+      margin: 0 3px;
+      background: #e2e5e7;
+    }
+  
+    &__dialog {
+      position: fixed !important;
+      top: 100px !important;
+      z-index: 10;
+      bottom: 0;
+      width: 100%;
+      background: #fff;
+      padding: 20px 25px;
+      overflow-y: auto;
+  
+      @media screen and (min-width: $breakpoint-sm) {
+        top: 160px !important;
+      }
+    }
+
+    &__passengers-input {
+      color: rgba(#000, .65);
+      outline: none;
+      transition: all 0.3s;
+      height: 64px;
+      padding: 6px 11px;
+      font-size: 16px;
+      background-color: #fff;
+      border: 1px solid $input-border;
+      border-radius: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  
+      &:hover, &.hover {
+        border-color: $primary;
+      }
+  
+      &--error {
+        border-color: $error !important;
+      }
+  
+      &__subtitle {
+        color: $font-color;
+        font-size: 14px;
+      }
+  
+      &__dialog {
+        @extend .search__mobile__dialog;
+        top: $size-mobile;
+        z-index: 20;
+        margin-left: -25px;
+  
+        @media screen and (min-width: $breakpoint-sm) {
+          top: $size-desktop !important;
+        }
+      }
+  
+      &__row {
+        @extend .search__mobile__passengers-input;
+        height: 54px;
+        margin: 12px 0;
+  
+        &:hover {
+          border-color: $input-border;
+        }
+  
+        &__span {
+          display: block;
+          margin-top: -2px;
+          font-size: 12px;
+          text-transform: uppercase;
+          color: rgba(#000, .4);
+        }
+      }
+    }
+  }
+
+  &__desktop {
+    width: 100%;
+    
+    .ant-row {
+      height: $size-desktop;
+
+      .ant-col {
+        height: $size-desktop;
+        border-right: 1px solid $input-border;
+
+        &:last-child {
+          border-width: 0;
+        }
+      }
+    }
+
+    &__icon {
+      position: absolute;
+      bottom: 16px;
+      right: 16px;
+    }
+
+    &__only-outbound {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      font-size: 11px;
+      font-weight: bold;
+      color: $primary;
+    }
+
+    &__column {
+      height: $size-desktop;
+      position: relative;
+      padding: 16px 42px 16px 16px;
+      overflow: hidden;
+      user-select: none;
+
+      &--error {
+        border-bottom: 1px solid $error !important;
+      }
+
+      &__label {
+        font-family: 'Playfair Display', serif;
+        color: $sub-text-color;
+        display: block;
+      }
+
+      &__title {
+        display: block;
+        align-items: flex-end;
+        color: $primary;
+        font-weight: bold;
+        font-size: 24px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        &__subtitle {
+          display: inline-block;
+          margin-left: 4px;
+          font-size: 10px;
+          line-height: 12px;
+          font-weight: bold;
+          text-transform: uppercase;
+          color: $sub-text-color;
+
+          &--sub {
+            display: block;
+            font-weight: 400 !important;
+          }
+        }
+      }
+
+      &__select--label {
+        display: inline-block;
+        color: $border-color;
+        font-weight: bold;
+        font-size: 22px;
+        text-overflow: ellipsis;
+      }
+    }
+
+    &__passenger-row {
+      @extend .search__mobile__passengers-input;
+      border: 0;
+
+      &__span {
+        display: block;
+        margin-top: -2px;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: rgba(#000, .4);
+      }
+    }
+  }
+}

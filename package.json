@@ -1,0 +1,78 @@
+{
+  "name": "maxmilhas",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "antd": "^3.23.6",
+    "axios": "^0.19.0",
+    "lint-staged": "^9.4.2",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "node-sass-chokidar": "^1.3.5",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.18.2",
+    "prop-types": "^15.7.2",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-icons": "^3.7.0",
+    "react-redux": "^7.1.1",
+    "react-router-dom": "^5.1.2",
+    "react-router-redux": "^4.0.8",
+    "react-scripts": "3.2.0",
+    "redux": "^4.0.4",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^2.1.2",
+    "stylelint": "^11.1.1",
+    "stylelint-config-standard": "^19.0.0"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json}": [
+      "eslint --fix",
+      "prettier --config .prettierrc --write",
+      "git add"
+    ],
+    "src/**/*.{scss,css}": [
+      "stylelint --config=.stylelintrc --fix",
+      "prettier --config .prettierrc --write",
+      "git add"
+    ]
+  },
+  "scripts": {
+    "eject": "react-scripts eject",
+    "precommit": "lint-staged",
+    "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build": "npm run build-css && react-scripts build",
+    "test:lint:js": "eslint --ext=js --ext=jsx .",
+    "test:lint:scss": "stylelint --config=.stylelintrc '**/*.scss'",
+    "test:lint": "run-s test:lint:**",
+    "test:unit": "react-scripts test --env=jsdom",
+    "test": "run-s test:**"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

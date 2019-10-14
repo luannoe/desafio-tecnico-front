@@ -1,0 +1,18 @@
+@import 'assets/css/variables.scss';
+
+.flights-container {
+  &__loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__error {
+    &__title {
+      display: block;
+      color: rgba(0, 0, 0, 0.85);
+      font-weight: 500;
+      font-size: 1.17em;
+    }
+  }
+}

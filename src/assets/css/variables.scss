@@ -1,0 +1,35 @@
+//
+// Colors
+$background-color: #edf3f8;
+$font-color: #879395;
+$border-color: #d8dcde;
+
+$primary: #1abc9c;
+$info: #1890ff;
+$success: #13ce66;
+$warning: #f0ab00;
+$error: #ff4d4f;
+
+$primary-dark: #16a78a;
+
+$colors: (
+  primary: $primary,
+  info: $info,
+  success: $success,
+  warning: $warning,
+  error: $error
+);
+
+//
+// Grid
+$breakpoint-xs: 576px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 992px;
+$breakpoint-lg: 1200px;
+$breakpoint-xl: 1600px;
+
+//
+// Utilities
+$spacer: 4px;
+$min-height-mobile: calc(100vh - 100px);
+$min-height-desktop: calc(100vh - 160px);

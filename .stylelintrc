@@ -1,0 +1,21 @@
+{
+  'extends': 'stylelint-config-standard',
+  'rules': {
+    'at-rule-no-unknown': null,
+    'declaration-block-single-line-max-declarations': null,
+    'declaration-block-trailing-semicolon': null,
+    'selector-list-comma-newline-after': null,
+    'no-eol-whitespace': null,
+    'number-leading-zero': null,
+    'no-missing-end-of-source-newline': null,
+    'declaration-empty-line-before': null,
+    'selector-pseudo-element-colon-notation': null,
+    'no-descending-specificity': null,
+    'declaration-colon-newline-after': null,
+    'function-comma-newline-after': null,
+    'declaration-colon-space-after': null,
+    'declaration-block-no-duplicate-properties': null,
+    'max-empty-lines': null,
+    'rule-empty-line-before': null
+  }
+}

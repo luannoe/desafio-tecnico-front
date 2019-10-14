@@ -1,0 +1,12 @@
+@import 'assets/css/variables.scss';
+
+.container {
+  background: $background-color;
+  color: $font-color;
+  min-height: 100vh;
+  padding-top: 100px;
+
+  @media screen and (min-width: $breakpoint-sm) {
+    padding-top: 160px;
+  }
+}

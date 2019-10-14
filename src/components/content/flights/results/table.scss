@@ -1,0 +1,182 @@
+@import 'assets/css/variables.scss';
+$header-color: #879395;
+$header-border-color: #748082;
+
+.flights-datatable {
+  &__header {
+    height: 50px;
+    border-radius: 5px 5px 0 0;
+    background: $header-color;
+    color: #fff;
+
+    .ant-col {
+      height: 50px;
+      border-right: 1px solid $header-border-color;
+
+      &:nth-child(4) {
+        border-width: 0;
+      }
+
+      .carot {
+        margin-top: 3px;
+        margin-left: 2px;
+        font-size: 18px;
+
+        &--rotate {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+
+    @media screen and (min-width: $breakpoint-lg) {
+      height: 80px;
+      font-weight: bold;
+
+      .ant-col {
+        height: 80px;
+
+        &:nth-child(4) {
+          border-width: 1px;
+        }
+
+        &:last-child {
+          border-width: 0;
+        }
+      }
+    }
+  }
+
+  &__content {
+    .card--flight {
+      display: flex;
+      flex-wrap: wrap;
+      background: #fff;
+      margin-bottom: 5px;
+      text-align: center;
+      border-width: 1px;
+      border-style: solid;
+      box-shadow: 0 1px 0 #e2e7ec;
+      border-image: 
+        linear-gradient(
+          to top, 
+          #e2e7ec, 
+          $background-color
+        ) 1 100%;
+
+      .ant-col {
+        padding: 10px 8px;
+
+        &:nth-child(5) { order: 2; }
+        &:nth-child(6) {
+          order: 1;
+          border-top: 1px dashed #d2d5d7;
+          border-bottom: 1px dashed #d2d5d7;
+        }
+
+        .btn--details {
+          border-width: 0;
+          text-transform: uppercase;
+          font-size: 14px;
+          font-weight: bold;
+          color: $font-color;
+          display: block;
+          width: 100%;
+
+          &__icon {
+            font-size: 16px;
+            margin-right: 6px;
+          }
+        }
+
+        .original-price {
+          font-size: 12px;
+          font-weight: bold;
+          text-decoration: line-through;
+          letter-spacing: -0.5px;
+          text-transform: uppercase;
+        }
+
+        .btn--price {
+          border-radius: 2px;
+          font-size: 14px;
+          padding: 0 28px;
+          margin: 3px 0 6px;
+          height: 32px;
+        }
+
+        .msg-price {
+          display: inline-block;
+          font-size: 12px;
+          font-weight: 600;
+          text-transform: uppercase;
+        }
+
+        @media screen and (min-width: $breakpoint-lg) {
+          padding: 0 8px;
+          height: 100px;
+
+          &:nth-child(5) { order: 1; }
+          &:nth-child(6) {
+            order: 2;
+            border-top-width: 0;
+            border-bottom-width: 0;
+            border-left: 1px dashed #d2d5d7;
+          }
+
+          .btn--details {
+            border: 1px solid #848f92;
+            font-size: 10px;
+            font-weight: bold;
+            padding: 0 12px;
+            display: inline-block;
+            width: auto;
+  
+            &__icon {
+              font-size: 12px;
+              margin-right: 3px;
+            }
+          }
+
+          .btn--price {
+            font-size: 16px;
+            height: 42px;
+          }
+        }
+      }
+
+      &__info {
+        h4 {
+          text-transform: uppercase;
+          font-size: 14px;
+          font-weight: bold;
+          color: $font-color;
+          margin: 0;
+          line-height: 1.2;
+        }
+
+        span {
+          opacity: .75;
+          font-size: 13px;
+        }
+
+        @media screen and (min-width: $breakpoint-lg) {
+          h4 {
+            font-size: 18px;
+          }
+
+          span {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    .card--flight--loading {
+      @extend .card--flight;
+      .ant-col {
+        height: auto;
+      }
+    }
+  }
+}
